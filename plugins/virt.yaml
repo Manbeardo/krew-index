@@ -19,12 +19,36 @@ spec:
     bin: "virtctl"
   - selector:
       matchLabels:
+        os: darwin
+        arch: arm64
+    uri: https://github.com/kubevirt/kubectl-virt-plugin/releases/download/v1.2.0/virtctl-darwin-arm64.tar.gz
+    sha256: 0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5
+    files:
+    - from: "/virtctl/virtctl-darwin-arm64"
+      to: "virtctl"
+    - from: virtctl/LICENSE
+      to: .
+    bin: "virtctl"
+  - selector:
+      matchLabels:
         os: linux
         arch: amd64
     uri: https://github.com/kubevirt/kubectl-virt-plugin/releases/download/v1.2.0/virtctl-linux-amd64.tar.gz
     sha256: 374d5ae1579e372a2b9ee330a921c8a611576fe9e923963943e23aae0138581f
     files:
     - from: "/virtctl/virtctl-linux-amd64"
+      to: "virtctl"
+    - from: virtctl/LICENSE
+      to: .
+    bin: "virtctl"
+  - selector:
+      matchLabels:
+        os: linux
+        arch: arm64
+    uri: https://github.com/kubevirt/kubectl-virt-plugin/releases/download/v1.2.0/virtctl-linux-arm64.tar.gz
+    sha256: 0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5
+    files:
+    - from: "/virtctl/virtctl-linux-arm64"
       to: "virtctl"
     - from: virtctl/LICENSE
       to: .
